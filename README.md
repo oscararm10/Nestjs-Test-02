@@ -10,10 +10,10 @@ El objetivo de este proyecto es construir un servicio backend para una aplicaci�
 
 La aplicación debe ser desarrollada utilizando las siguientes tecnologías:
 
-- **Framework:** NestJS.
-- **Lenguaje de programación:** TypeScript.
-- **Base de datos:** MySQL para la persistencia de datos.
-- **Docker:** La aplicación debe estar dockerizada.
+- Framework: NestJS.
+- Lenguaje de programación: TypeScript.
+- Base de datos: MySQL para la persistencia de datos.
+- Docker: La aplicación debe estar dockerizada.
 
 El proyecto debe incluir:
 
