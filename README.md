@@ -1,93 +1,93 @@
 # Backend_Developer_NestJS_02
 
-¡Bienvenido(a) a la prueba técnica para el puesto de Desarrollador Backend con NestJS! En esta prueba, evaluaremos tus habilidades en el desarrollo de aplicaciones utilizando NestJS, con un enfoque específico en diversos aspectos técnicos y de buenas prácticas.
+Welcome to the technical test for the NestJS Backend Developer position! In this test, we assess your skills in developing applications using NestJS, with a specific focus on various technical and best practice aspects.
 
-## Descripción del Proyecto
+## Project Description
 
-El objetivo de este proyecto es construir un servicio backend para una aplicación de lista de tareas utilizando **NestJS**. El servicio debe estar dockerizado, seguir reglas estrictas de linting, incluir conexiones a bases de datos, registro de logs (tanto en archivos como en MongoDB) y utilizar otros componentes avanzados proporcionados por el framework.
+The goal of this project is to build a backend service for a to-do list application using **NestJS**. The service must be dockerized, follow strict linting rules, include database connections, logging (both to files and MongoDB), and use other advanced components provided by the framework.
 
-## Requisitos Técnicos
+## Technical Requirements
 
-La aplicación debe ser desarrollada utilizando las siguientes tecnologías:
+The application must be developed using the following technologies:
 
 - Framework: NestJS.
-- Lenguaje de programación: TypeScript.
-- Base de datos: MySQL para la persistencia de datos.
-- Docker: La aplicación debe estar dockerizada.
+- Programming language: TypeScript.
+- Database: MySQL for data persistence.
+- Docker: The application must be dockerized.
 
-El proyecto debe incluir:
+The project must include:
 
-- Un controlador para gestionar las operaciones CRUD de las tareas.
-- Un servicio que maneje la lógica de negocio relacionada con las tareas.
-- Validaciones para los datos de entrada en las solicitudes usando DTOs.
-- Middleware para registro de solicitudes HTTP.
-- Sistema de logging con soporte para archivos y MongoDB.
-- Cacheo para los endpoints más accedidos usando Redis.
-- Limitación de tasa (Rate limiting) en los endpoints de la API.
-- Pruebas unitarias y de integración con al menos un 80% de cobertura.
-- Documentación API utilizando el módulo Swagger (opcional).
+- A controller to manage CRUD operations of the tasks.
+- A service that handles the business logic related to the tasks.
+- Validations for input data in requests using DTOs.
+- Middleware for logging HTTP requests.
+- Logging system with support for files and MongoDB.
+- Caching for the most accessed endpoints using Redis.
+- Rate limiting on the API endpoints.
+- Unit and integration tests with at least 80% coverage.
+- API documentation using the Swagger module (optional).
 
-### Endpoints de la API
+### API Endpoints
 
-#### Gestión de Tareas
+#### Task Management
 
-- **POST** `/tasks`: Crear una nueva tarea.
-- **GET** `/tasks`: Recuperar todas las tareas con la capacidad de filtrar por estado (completadas, pendientes).
-- **GET** `/tasks/:id`: Recuperar una tarea específica por ID.
-- **PUT** `/tasks/:id`: Actualizar una tarea existente (título, descripción, estado).
-- **DELETE** `/tasks/:id`: Eliminar una tarea por ID.
+- **POST** `/tasks`: Create a new task.
+- **GET** `/tasks`: Retrieve all tasks with the ability to filter by status (completed, pending).
+- **GET** `/tasks/:id`: Retrieve a specific task by ID.
+- **PUT** `/tasks/:id`: Update an existing task (title, description, status).
+- **DELETE** `/tasks/:id`: Delete a task by ID.
 
-#### Estado de las Tareas
+#### Task Status
 
-- Marcar tareas como completadas o pendientes.
-- Incluir un contador que indique cuántas tareas están completadas y cuántas están pendientes.
+- Mark tasks as completed or pending.
+- Include a counter indicating how many tasks are completed and how many are pending.
 
-### Dockerización
+### Dockerization
 
-- Proporcionar un archivo `Dockerfile` para construir la imagen de Docker de la aplicación NestJS.
-- Proporcionar un archivo `docker-compose.yml` para el despliegue local del servicio.
+- Provide a `Dockerfile` file to build the NestJS application Docker image.
+- Provide a `docker-compose.yml` file for local deployment of the service.
 
 ### Logging
 
-- Implementar un sistema de registro de logs completo:
-  - **Logging basado en archivos:** Registrar todas las solicitudes y respuestas HTTP.
-  - **Logging en MongoDB:** Guardar los logs de la aplicación (p. ej., errores, eventos importantes) en MongoDB.
-- Integrar **Winston** u otra biblioteca de logging que soporte múltiples transportes.
+- Implement a full-featured logging system:
+  - **File-based logging:** Log all HTTP requests and responses.
+  - **MongoDB logging:** Save application logs (e.g. errors, important events) to MongoDB.
+- Integrate **Winston** or another logging library that supports multiple transports.
 
-### Seguridad
+### Security
 
-- Implementar autenticación basada en **JWT** y proteger los endpoints de la API.
-- Proteger los datos sensibles (p. ej., credenciales de la base de datos) usando variables de entorno y asegurarse de que no se expongan.
+- Implement **JWT**-based authentication and secure API endpoints.
+- Protect sensitive data (e.g. database credentials) using environment variables and make sure they are not exposed.
 
 ### Extras
 
-- Implementar un endpoint de métricas para monitorizar el rendimiento de la API (p. ej., usando **Prometheus** o similar).
-- Añadir soporte de paginación para el endpoint `GET /tasks` cuando haya más de 10 tareas.
+- Implement a metrics endpoint to monitor API performance (e.g. using **Prometheus** or similar).
+- Add pagination support for the `GET /tasks` endpoint when there are more than 10 tasks.
 
-## Aspectos a Evaluar
+## Aspects to Evaluate
 
-Durante la revisión de tu proyecto, nos enfocaremos en los siguientes aspectos:
+During your project review, we will focus on the following aspects:
 
-1. **Correcto Funcionamiento:** Verificaremos que la aplicación cumpla con los requisitos y funcione correctamente.
-2. **Eficiencia:** Evaluaremos la eficiencia del código, incluido el rendimiento y el manejo de recursos.
-3. **Lectura de Código:** Revisaremos la legibilidad del código, la claridad en la estructura y la coherencia en las convenciones de nomenclatura.
-4. **Formateo y Estilo del Código:** Verificaremos el uso de herramientas como linter para mantener un código consistente y prettier para el formateo del mismo.
-5. **Organización del Proyecto:** Evaluar la estructura y organización del código fuente.
+1. **Working Correctly:** We will verify that the application meets the requirements and works correctly.
+2. **Efficiency:** We will evaluate the efficiency of the code, including performance and resource management.
+3. **Code Readability:** We will review the code for readability, clarity in structure, and consistency in naming conventions.
+4. **Formatting and Code Style:** We will verify the use of tools such as linter to maintain consistent and prettier code formatting.
+5. **Project Organization:** Evaluate the structure and organization of the source code.
 
-## Tareas a Realizar
+## Tasks to Perform
 
-1. Implementar el servicio de gestión de tareas con las funcionalidades descritas anteriormente.
-2. Crear un archivo `Dockerfile` para construir la imagen de Docker de la aplicación.
-3. Crear un archivo `docker-compose.yml` para el despliegue local del servicio.
-4. Realizar una revisión del código para evaluar la calidad de la lectura del mismo.
-5. Utilizar un linter y prettier para garantizar la calidad y estilo del código.
-6. Verificar el correcto funcionamiento de la aplicación.
+1. Implement the task management service with the functionalities described above.
+2. Create a `Dockerfile` file to build the Docker image of the application.
+3. Create a `docker-compose.yml` file for local deployment of the service.
+4. Perform a code review to evaluate the quality of the code readability.
+5. Use a linter and prettier to ensure the quality and style of the code.
+6. Verify the correct operation of the application.
 
-## Entrega de la Prueba
+## Test Delivery
 
-- El código fuente debe ser entregado mediante un pull request hacia la rama `master` de este repositorio.
-- El nombre de la rama debe seguir la siguiente convención: `test/nombre-persona`.
-- Agrega al final del archivo `README.md` instrucciones claras sobre cómo ejecutar y probar la aplicación.
-  - Además de la documentación necesaria para probar la API con ejemplos de requests.
+- The source code must be delivered through a pull request to the `master` branch of this repository.
+- The name of the branch must follow the following convention: `test/person-name`.
+- Add clear instructions on how to run and test the application to the end of the `README.md` file.
+- As well as the necessary documentation to test the API with sample requests.
 
-¡Buena suerte y estamos ansiosos por revisar tu trabajo!
+Good luck and we look forward to reviewing your work!
