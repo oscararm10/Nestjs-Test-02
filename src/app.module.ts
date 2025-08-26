@@ -13,7 +13,7 @@ import { MongooseModule } from '@nestjs/mongoose';
       host: process.env.DB_HOST || 'localhost',
       port: Number(process.env.DB_PORT) || 3306,
       username: process.env.DB_USERNAME || 'root',
-      password: process.env.DB_PASSWORD || 'oscararm10',
+      password: process.env.DB_PASSWORD || '******', //colocar contraseña
       database: process.env.DB_DATABASE || 'tasksdb',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true // usar solo en desarrollo
